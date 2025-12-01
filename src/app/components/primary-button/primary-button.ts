@@ -5,6 +5,7 @@ import { Component, input, output } from '@angular/core';
   imports: [],
   template: `<button
     class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600"
+    [class]="width()"
     (click)="handleButtonClicked()"
   >
     {{ label() || 'Check out!' }}
@@ -13,6 +14,7 @@ import { Component, input, output } from '@angular/core';
 })
 export class PrimaryButton {
   label = input('');
+  width = input('w-auto');
 
   btnClicked = output();
 
